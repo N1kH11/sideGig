@@ -7,14 +7,14 @@
 }
 
 .header {
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   left: 0;
   right: 0;
   padding: 2rem;
   text-align: center;
   border-bottom: 1px solid #e0e0e0;
-  background-color: #ffffff;
+  background-color: #bcb2af;
   z-index: 200;
 }
 
@@ -37,7 +37,7 @@
 .main-content {
   flex: 1;
   padding: 0;
-  margin-top: 120px; /* Account for fixed header */
+  /* margin-top: 120px;  */
 }
 
 .gallery {

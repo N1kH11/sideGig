@@ -136,7 +136,7 @@ function App() {
   return (
     <div className="app">
       <header className="header">
-        <h1 className="title">Neha Banthia</h1>
+        <h1 className="title">lifeescrap_</h1>
         <p className="subtitle">Scraping life's art</p>
       </header>
 
@@ -189,8 +189,8 @@ function App() {
               </p>
               <div className="contact-info">
                 {/* <a href="tel:+31619084555">+31 6 190 84 555</a>
-                <a href="mailto:mail@simonesniekers.com">
-                  mail@simonesniekers.com
+                <a href="mailto:mail@Neha_sniekers.com">
+                  mail@Neha_sniekers.com
                 </a> */}
                 <a
                   href="https://www.instagram.com/lifeescrap_/"
