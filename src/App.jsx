@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { lightenColor, interpolateColors } from "./utils/colorExtractor";
 import "./App.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -21,17 +22,17 @@ function App() {
     "/p9.JPG",
   ];
 
-  // Background colors for each image (gradient from color to white)
+  // Background colors for each image (provided hex colors)
   const backgroundColors = [
-    "#E8D5E3", // Lavender-pink
-    "#F5D7D9", // Soft pink
-    "#E3E8F5", // Soft blue
-    "#F0E8D5", // Soft beige
-    "#E8F5E3", // Soft green
-    "#F5E8D5", // Soft peach
-    "#E8D5E8", // Soft purple
-    "#D5E8F5", // Soft sky blue
-    "#F5E8E3", // Soft rose
+    "#FFDC81", // p1
+    "#98C0CE", // p2
+    "#79B480", // p3
+    "#E3AE83", // p4
+    "#C4B898", // p5
+    "#5A576A", // p6
+    "#7A5DD5", // p7
+    "#93918C", // p8
+    "#CEE6F3", // p9
   ];
 
   useEffect(() => {
@@ -64,8 +65,48 @@ function App() {
           }
         );
 
-        // Smooth background fade on scroll
+        // Smooth background color transition based on scroll
         if (bgGradient) {
+          const currentBaseColor = backgroundColors[index];
+          const currentLightColor = lightenColor(currentBaseColor, 50);
+
+          // Get next section's colors for smooth transition
+          const nextIndex = index + 1;
+          const nextBaseColor =
+            nextIndex < backgroundColors.length
+              ? backgroundColors[nextIndex]
+              : currentBaseColor;
+          const nextLightColor = lightenColor(nextBaseColor, 50);
+
+          // Animate color transition as you scroll through the section
+          ScrollTrigger.create({
+            trigger: section,
+            start: "top center",
+            end: "bottom center",
+            scrub: 1,
+            onUpdate: (self) => {
+              const progress = self.progress;
+
+              // Interpolate base color
+              const interpolatedBase = interpolateColors(
+                currentBaseColor,
+                nextBaseColor,
+                progress
+              );
+
+              // Interpolate light color
+              const interpolatedLight = interpolateColors(
+                currentLightColor,
+                nextLightColor,
+                progress
+              );
+
+              // Update background gradient
+              bgGradient.style.background = `linear-gradient(to bottom, ${interpolatedBase}, ${interpolatedLight})`;
+            },
+          });
+
+          // Initial fade in
           gsap.fromTo(
             bgGradient,
             {
@@ -80,7 +121,6 @@ function App() {
                 start: "top 80%",
                 end: "top 20%",
                 toggleActions: "play none none reverse",
-                scrub: 0.5, // Smooth scrubbing for better transition
               },
             }
           );
@@ -113,7 +153,9 @@ function App() {
                 <div
                   className="background-gradient"
                   style={{
-                    background: `linear-gradient(to bottom, ${backgroundColors[index]}, #ffffff)`,
+                    background: `linear-gradient(to bottom, ${
+                      backgroundColors[index]
+                    }, ${lightenColor(backgroundColors[index], 50)})`,
                   }}
                 />
                 <div className="image-container">
@@ -164,8 +206,8 @@ function App() {
       )}
 
       <footer className="footer">
-        <p>Design Kalok Yeung</p>
-        <p>Code Ezekiel Aquino</p>
+        <p>Design Neha Banthia</p>
+        <p>Code Neha Banthia</p>
       </footer>
     </div>
   );
