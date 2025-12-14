@@ -188,10 +188,6 @@ function App() {
                 Neha Banthia is a software engineer and artist based in India.
               </p>
               <div className="contact-info">
-                {/* <a href="tel:+31619084555">+31 6 190 84 555</a>
-                <a href="mailto:mail@Neha_sniekers.com">
-                  mail@Neha_sniekers.com
-                </a> */}
                 <a
                   href="https://www.instagram.com/lifeescrap_/"
                   target="_blank"

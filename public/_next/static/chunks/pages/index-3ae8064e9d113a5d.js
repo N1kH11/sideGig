@@ -357,10 +357,10 @@
                                   "Design",
                                   " ",
                                   (0, d.tZ)("a", {
-                                    href: "https://kalokyeung.com",
+                                    href: "https://lifescrape_.com",
                                     target: "_blank",
                                     rel: "noopener noreferrer",
-                                    children: "Kalok Yeung",
+                                    children: "lifescrape_ ",
                                   }),
                                 ],
                               }),
@@ -369,10 +369,10 @@
                                   "Code",
                                   " ",
                                   (0, d.tZ)("a", {
-                                    href: "https://ezekielaquino.com",
+                                    href: "https://n1kh1l.com",
                                     target: "_blank",
-                                    rel: "noopener noreferrer",
-                                    children: "Ezekiel Aquino",
+                                    rel: "",
+                                    children: "Nikhil",
                                   }),
                                 ],
                               }),
@@ -865,16 +865,16 @@
               (0, d.tZ)(fa.PB, {
                 title: e,
                 description: f,
-                canonical: "https://Neha_sniekers1111.com",
+                canonical: "https://Neha_ 1111.com",
                 openGraph: {
                   type: "website",
                   locale: "en_IE",
-                  url: "https://Neha_sniekers1111.com",
+                  url: "https://Neha_ 1111.com",
                   title: e,
                   description: f,
                   images: [
                     {
-                      url: "https://Neha_sniekers111.com/og-image.png",
+                      url: "https://Neha_ 111.com/og-image.png",
                       width: 1200,
                       height: 630,
                       alt: f,
